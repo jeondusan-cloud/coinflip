@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="결정해줘 — 동전 던지기로 빠르게 결정하는 앱">
+  <title>결정해줘 — 동전 던지기 앱</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #FAF9F6;
+      color: #292524;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 480px;
+      text-align: center;
+    }
+    .coin-emoji {
+      font-size: 80px;
+      margin-bottom: 1.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 300;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: #78716C;
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      text-align: left;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: #44403C;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #EA580C, #C2410C);
+      color: white;
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(234, 88, 12, 0.3);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(234, 88, 12, 0.4);
+    }
+    .links {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .links a {
+      color: #A8A29E;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .links a:hover { color: #78716C; }
+    footer {
+      margin-top: 3rem;
+      color: #D6D3D1;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="coin-emoji">🪙</div>
+    <h1>결정해줘</h1>
+    <p class="subtitle">동전 던지기로 빠르게 결정하세요.<br>길게 누르면 더 많이 회전합니다!</p>
+    <div class="features">
+      <div class="feature">🎯 터치 한 번으로 간편한 결정</div>
+      <div class="feature">⏱️ 누르는 시간에 따라 달라지는 회전</div>
+      <div class="feature">📳 실감나는 진동 피드백</div>
+      <div class="feature">🔒 개인정보 수집 없음, 인터넷 불필요</div>
+    </div>
+    <!-- Google Play 링크 (출시 후 실제 URL로 교체) -->
+    <a href="#" class="btn" id="download-btn">
+      Google Play에서 다운로드
+    </a>
+    <div class="links">
+      <a href="privacy-policy.md">개인정보처리방침</a>
+      <a href="https://github.com/jeondusan-cloud/coinflip">GitHub</a>
+    </div>
+  </div>
+  <footer>&copy; 2026 결정해줘</footer>
+</body>
+</html>

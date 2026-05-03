@@ -1,0 +1,8 @@
+# 작업 3: 키스토어 설정 템플릿
+# 이 파일을 복사하여 key.properties 로 이름을 바꾸고 실제 값을 입력하세요.
+# key.properties 파일은 .gitignore에 포함되어 있어 Git에 커밋되지 않습니다.
+
+storePassword=YOUR_STORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=coinflip
+storeFile=../coinflip-release-key.jks

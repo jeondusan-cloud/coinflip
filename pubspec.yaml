@@ -1,0 +1,30 @@
+name: coinflip
+description: "결정해줘 — 동전 던지기로 빠르게 결정하세요"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.3
+
+# 작업 5: flutter_launcher_icons 설정
+flutter_launcher_icons:
+  image_path: "assets/icon/app_icon.png"
+  android: true
+  ios: false
+  min_sdk_android: 23
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icon/
