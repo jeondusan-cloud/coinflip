@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🪙 Flip It — 동전 던지기
 
-# Run and deploy your AI Studio app
+3D 동전 던지기 앱입니다. 화면을 눌러 동전을 던지고 빠르게 결정하세요.
 
-This contains everything you need to run your app locally.
+## 기능
 
-View your app in AI Studio: https://ai.studio/apps/d01fcf62-1576-4f6f-803b-c76fce6e8cb4
+- 🎯 **터치/클릭으로 동전 던지기** — 누르고 떼면 동전이 날아갑니다
+- ⏱️ **길게 누르기** — 오래 누를수록 동전이 더 많이 회전합니다
+- 🎨 **3D 애니메이션** — CSS 3D 트랜스폼과 Motion으로 구현된 자연스러운 회전
 
-## Run Locally
+## 기술 스택
 
-**Prerequisites:**  Node.js
+- React 19 + TypeScript
+- Vite
+- Motion (Framer Motion)
+- Tailwind CSS v4
 
+## 실행 방법
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**필요 환경:** Node.js 18+
+
+```bash
+npm install
+npm run dev
+```
+
+http://localhost:3000 에서 앱을 확인할 수 있습니다.
+
+## 라이선스
+
+Apache-2.0

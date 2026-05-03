@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Target, Pointer } from 'lucide-react';
 
@@ -143,6 +143,22 @@ export default function App() {
     }, calculatedDuration * 1000);
   }, [isHolding, state, rotation]);
 
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      if (state === AppState.FLIPPING) return;
+      holdStartTime.current = Date.now();
+      setIsHolding(true);
+    }
+  }, [state]);
+
+  const handleKeyUp = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      handlePointerUp();
+    }
+  }, [handlePointerUp]);
+
   return (
     <main 
       className="fixed inset-0 flex flex-col items-center justify-between py-12 select-none overflow-hidden touch-none"
@@ -151,6 +167,11 @@ export default function App() {
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerUp}
       onPointerLeave={handlePointerUp}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+      tabIndex={0}
+      role="button"
+      aria-label="동전 던지기 — 클릭하거나 스페이스바를 눌러 동전을 던지세요"
       id="main-screen"
     >
       {/* App Title */}
@@ -182,7 +203,7 @@ export default function App() {
       </div>
 
       {/* Results & Instructions */}
-      <div className="text-center h-48 flex flex-col items-center justify-center" id="footer-area">
+      <div className="text-center h-48 flex flex-col items-center justify-center" id="footer-area" aria-live="polite" aria-atomic="true">
         <AnimatePresence mode="wait">
           {state === AppState.LANDED ? (
             <motion.div
@@ -240,7 +261,7 @@ export default function App() {
 
       {/* Audio toggle placeholder (UI only for now) */}
       <div className="absolute top-6 right-6" id="settings-area">
-        <button className="p-2 text-stone-300 hover:text-stone-500 transition-colors">
+        <button className="p-2 text-stone-300 hover:text-stone-500 transition-colors" aria-label="소리 설정">
           {/* Mute icon stub */}
           <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
